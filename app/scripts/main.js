@@ -74,12 +74,18 @@ function printResults(results) {
   			entry.kind_count = 0
   		}
 
+  		if(entry.params.place_id) {
+  			entry.places_count = entry.params.place_id.length
+  		} else {
+  			entry.places_count = 0
+  		}
   		entries.push(entry);
   	})
 
 
 
   	stats.total_pageviews = sum(_.pluck(entries, 'pageviews'))
+  	processPlaces()
   	processNetworks()
   	processKinds()
   	processPosters() 
@@ -104,6 +110,13 @@ function printResults(results) {
   } else {
     console.log('No results found');
   }
+}
+function processPlaces() {
+	var rows = _.filter(entries, function(entry) {
+  		return entry.places_count > 0
+  	})
+  	stats.places_pageviews = sum(_.pluck(rows, 'pageviews'))
+  	
 }
 
 function processNetworks() {

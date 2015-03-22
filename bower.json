@@ -1,5 +1,5 @@
 {
-  "name": "spaa",
+  "name": "filter-stats",
   "private": true,
   "dependencies": {
     "jquery": "~1.10.2"

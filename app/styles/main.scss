@@ -1,39 +1,46 @@
 $color-orange: #f1592a;
 $color-red: #e11b22;
 $color-grey: #2d2927;
-
-@mixin fullscreen {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
+$color-green: #cbdb2a;
+$color-red2: #ef4130;
+.color-one {
+    color: #ef4130;
 }
 
-@mixin gradient-mask($color: $color-orange) {
-	&:before {
-    content: "";
-    background-color: transparent;
-    position: absolute;
-    background-image: linear-gradient(to left, rgba($color, 0) 0%, rgba($color,1) 100%);
-    pointer-events: none;
-    bottom: 0;
-    top:0;
-    left: 0;
-    height: 100%;
-    width: 200px;
-    z-index: 5;
-    transition: height 0.3s ease;
-
-  }
+.color-two {
+    color: #f1592a;
 }
 
-@keyframes sidescroll {
-	from { transform: translateX(30%)}
-	to { transform: translateX(-100%)}
+.color-three {
+    color: #f7941e;
 }
+
+.color-four {
+    color: #faa634;
+}
+
+.color-five {
+    color: #00addc;
+}
+
+.color-six {
+    color: #bcdb2a;
+}
+
+.color-seven {
+    color: #e11b22;
+}
+
+.color-eight {
+    color: #6dc8bf;
+}
+
+.color-grey {
+    color: #ababab;
+}
+
+
+
 
 * {
 	box-sizing: border-box;
@@ -45,65 +52,9 @@ body {
     color: #333;
 }
 
+td, th {
+	text-align: left;
+	border: 1px solid $color-grey;
+	padding: 3px;
 
-.slide {
-	@include fullscreen;
-}
-
-
-
-.background {
-	@include fullscreen;
-	&.orange {
-		background: $color-orange;
-	}
-	&.red {
-		z-index: -1;
-		background: $color-red;
-	}
-}
-
-.footer {
-	@include fullscreen;
-	top:auto;
-	left:0;
-	height: 40vh;
-	padding-bottom:50px;
-	display: flex;
-}
-
-svg{
-	width:100%;
-	max-width: 100%;
-}
-
-.logo {
-	width: 300px;
-	padding: 30px;
-	padding-left: 50px;
-	background: $color-grey;
-	border-radius: 0 20px 20px 0;
-	box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5)
-}
-
-.scrolling-text {
-	position: relative;
-	flex: 1;
-	overflow: hidden;
-	padding-top: 10vh;
-	@include gradient-mask();
-	
-	div {
-		white-space: nowrap;
-		position:absolute;
-		width: auto;
-	}
-	
-	p {
-		color: #fff;
-		font-size: 3.5em;
-		line-height: 1.2;
-		font-weight: 400;
-		animation: sidescroll 30s linear infinite;
-	}
 }

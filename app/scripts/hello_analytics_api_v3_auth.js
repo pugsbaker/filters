@@ -32,11 +32,12 @@ function handleAuthResult(authResult) {
 function handleAuthorized() {
   var authorizeButton = document.getElementById('authorize-button');
   var makeApiCallButton = document.getElementById('make-api-call-button');
+  var form = document.getElementById('form');
 
   // Show the 'Get Sessions' button and hide the 'Authorize' button
-  makeApiCallButton.style.visibility = '';
+  //makeApiCallButton.style.visibility = '';
   authorizeButton.style.visibility = 'hidden';
-
+  form.style.visibility = '';
   // When the 'Get Sessions' button is clicked, call the makeAapiCall function
   makeApiCallButton.onclick = makeApiCall;
 }

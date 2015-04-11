@@ -12,6 +12,7 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
+        <link rel="stylesheet" href="bower_components/chartist/dist/chartist.min.css">
         <!-- endbower -->
         <script src="//use.typekit.net/lom5rkn.js"></script>
 		<script>try{Typekit.load();}catch(e){}</script>
@@ -24,10 +25,21 @@
         
         <div id="wrapper">
             <button id="authorize-button" >Authorize</button><br/>
-            <button id="make-api-call-button" style="visibility: hidden">Get Sessions</button>
+            <div id="form" style="visibility: hidden">
+                <input id="posts" class="radio" type="radio" name="page" value="Posts" checked="checked">Posts</input>
+                <input id="dashboard" class="radio" type="radio" name="page" value="Dashboard">Dashboard</input>
+                <input id="startdate" class="text" type="date"></input><input id="enddate" class="text" type="date"></input>
+                 <button id="make-api-call-button" >Get Sessions</button>
+            </div>
+           
             <div id="stats"></div>
+            <div class="charts">
+                <h2 class="t">Filters</h2>
+                <div class="ct-chart ct-chart-filters ct-major-third"></div>
+            </div>
             <div id="table">
             </div>
+
 		</div>
        
 
@@ -40,6 +52,7 @@
         <script src="bower_components/underscore/underscore.js"></script>
         <script src="bower_components/moment/moment.js"></script>
         <script src="scripts/hello_analytics_api_v3_auth.js"></script>
+        <script src="bower_components/chartist/dist/chartist.min.js">
        
         <!-- endbower -->
         <!-- endbuild -->

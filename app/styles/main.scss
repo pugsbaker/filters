@@ -58,3 +58,20 @@ td, th {
 	padding: 3px;
 
 }
+
+.grid {
+    display: flex;
+
+    .column {
+        flex: 1;
+    }
+}
+
+dt {
+    font-weight: bold;
+    font-size: 0.8em;
+}
+dd {
+    margin-left: 0;
+    padding-bottom: 10px;
+}

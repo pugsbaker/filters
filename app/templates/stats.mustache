@@ -1,18 +1,43 @@
-<dl>
-	<dt>Total</dt>
-	<dd>{{total_pageviews}}</dd>
-	<dt>Places</dt>
-	<dd>{{places_pageviews}}</dd>
-	<dt>Network</dt>
-	<dd>{{network_pageviews}}</dd>
-	<dt>Kinds</dt>
-	<dd>{{kind_pageviews}}</dd>
-	<dt>Posters</dt>
-	<dd>{{poster_pageviews}}</dd>
-	<dt>Day</dt>
-	<dd>{{day_pageviews}}</dd>
-	<dt>Week</dt>
-	<dd>{{week_pageviews}}</dd>
-	<dt>Month</dt>
-	<dd>{{month_pageviews}}</dd>
-</dl>
+
+<div class="grid">
+	<div class="column">
+		<h2>General</h2>
+		<dl>
+			<dt>Total</dt>
+			<dd>{{total_pageviews}}</dd>
+			<dt>Places</dt>
+			<dd>{{places_pageviews}} ({{places_percent}}%)</dd>
+			<dt>Places MultiSelect</dt>
+			<dd>{{places_multi_pageviews}}  ({{places_multi_percent}}%)</dd>
+			<dt>Network</dt>
+			<dd>{{network_pageviews}}  ({{network_percent}}%)</dd>
+			<dt>Kinds</dt>
+			<dd>{{kind_pageviews}}  ({{kind_percent}}%)</dd>
+		</dl>
+	</div>
+	<div class="column">
+		<h2>Date</h2>
+		<dl>
+		<dt>Total with Time Filter</dt>
+		<dd>{{time_pageviews}}  ({{time_percent}}%)</dd>
+		<dt>Day (24 hours)</dt>
+		<dd>{{day_pageviews}}</dd>
+		<dt>Week (7 days)</dt>
+		<dd>{{week_pageviews}}</dd>
+		<dt>Month (28,30 or 31 days)</dt>
+		<dd>{{month_pageviews}}</dd>
+		<dt>Year (> 350 days)</dt>
+		<dd>{{year_pageviews}}</dd>
+		<dt>Custom (other)</dt>
+		<dd>{{custom_time_pageviews}}</dd>
+		
+		<dt>No Filter</dt>
+		<dd>{{no_time_pageviews}}</dd>
+		</dl>
+	</div>
+	<div class="column">
+		<div class="ct-chart ct-chart-time ct-square"></div>
+	</div>
+</div>
+
+

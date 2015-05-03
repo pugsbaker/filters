@@ -1,3 +1,4 @@
+
 var stats = {};
 var entries = [];
 
@@ -87,6 +88,10 @@ function printResults(results) {
   		} else {
   			entry.places_count = 0
   		}
+        if(entry.params.custom_date) {
+            entry.params.custom_date = entry.params.custom_date[0]
+        }
+        
   		entries.push(entry);
   	})
 
@@ -201,6 +206,10 @@ function processPosters() {
 }
 
 function processTimespans() {
+    var is_custom = _.filter(entries, function(entry) {
+        return (entry.params.custom_date == "true")
+    })
+    stats.custom_time_pageviews = sum(_.pluck(is_custom, 'pageviews'))
 	var week = _.filter(entries, function(entry) {
 		return (entry.params.timespan == 7)
 	})
@@ -222,7 +231,6 @@ function processTimespans() {
   })
   stats.time_pageviews =  sum(_.pluck(total, 'pageviews'))
   var set_time = stats.week_pageviews + stats.day_pageviews + stats.month_pageviews + stats.year_pageviews;
-  stats.custom_time_pageviews =  stats.time_pageviews - set_time 
   stats.no_time_pageviews = stats.total_pageviews - stats.time_pageviews
 
   stats.time_percent = getPercent(stats.time_pageviews);
